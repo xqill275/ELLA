@@ -9,11 +9,10 @@ void ella::init() {
     }
     std::cout << "How can i help you? \n";
     std::string userInput = getUserInput();
-    std::cout << userInput;
     SP.init(userInput);
-    for (const auto& token : SP.getTokens()) {
-        std::cout << token.word << " -> " << token.type << '\n';
-    }
+    // for (const auto& token : SP.getTokens()) {
+        // std::cout << token.word << " -> " << token.type << '\n';
+    // }
     Intent intent = EX.parseIntent(SP.getTokens());
     EX.executeIntent(intent);
     init();
