@@ -25,6 +25,8 @@ void stringParser::initDictionary() {
         {"delete", TT::COMMAND},
         {"called", TT::COMMAND},
         {"named", TT::COMMAND},
+        {"exit", TT::COMMAND},
+        {"goodbye", TT::COMMAND},
         {"a", TT::NUMBER},
         {"an", TT::NUMBER},
         {"folder", TT::FILE_TYPE},

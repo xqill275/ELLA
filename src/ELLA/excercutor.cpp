@@ -31,14 +31,15 @@ Intent Executor::parseIntent(const std::vector<stringParser::Token>& tokens) {
 void Executor::executeIntent(const Intent& intent) {
     if (intent.action == "make" && intent.type == "folder") {
         fs::create_directory(intent.name);
-        std::cout << "✅ Created folder: " << intent.name << "\n";
-    } else {
-        std::cout << "❌ Unknown action or unsupported type.\n";
-    }
-    if (intent.action == "delete" || intent.action == "remove" && intent.type == "folder") {
+        std::cout << " ✅ No problem, i've created a folder with the name " << intent.name << "\n";
+    } else if (intent.action == "delete" || intent.action == "remove" && intent.type == "folder") {
         fs::remove(intent.name);
-        std::cout << "✅ deleted folder: " << intent.name << "\n";
+        std::cout << "✅ I've removed : " << intent.name << "\n";
+    } else if (intent.action == "exit" || intent.action == "goodbye") {
+        std::cout << "Good bye!.\n";
+        exit(0);
     } else {
         std::cout << "❌ Unknown action or unsupported type.\n";
     }
+
 }
